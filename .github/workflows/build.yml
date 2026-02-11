@@ -1,4 +1,4 @@
-name: Build Linux AppImage for Helium
+name: Build Linux tarball for Helium
 on:
   workflow_dispatch:
     inputs:
@@ -20,8 +20,8 @@ jobs:
     name: Build Helium binaries and AppImage
     strategy:
       matrix:
-        arch: [arm64, x86_64]
-      max-parallel: 2
+        arch: [x86_64]
+      max-parallel: 1
       fail-fast: true
     uses: ./.github/workflows/build-steps.yml
     secrets: inherit
