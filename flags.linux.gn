@@ -14,7 +14,6 @@ use_sysroot=true
 use_vaapi=true
 use_system_libffi=false
 optimize_for_speed = true
-enable_nacl = false
 enable_widevine = false
 rustc_cfg = "target_cpu=\"x86_64\""
 rustc_cfg_extra = "target_feature=\"sse,sse2,sse3,ssse3,sse4.1,sse4.2,avx,avx2,fma\""
