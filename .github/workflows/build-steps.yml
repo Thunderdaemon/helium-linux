@@ -183,5 +183,7 @@ jobs:
         with: { submodules: true }
       - uses: ./.github/actions/package
         with:
+          fetch-depth: 0          # fetches all history and tags
+          fetch-tags: true       # explicitly fetch tags (GitHub’s checkout action respects this)
           private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
