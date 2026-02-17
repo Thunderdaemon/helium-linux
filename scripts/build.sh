@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-clone=false
+clone=true
 with_pgo=true
 
 while [ $# -gt 0 ]; do
