@@ -207,10 +207,10 @@ setup_toolchain() {
 
     local resource_dir
     resource_dir="$(${CC%% *} --print-resource-dir)"
-    export CXXFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -flto=thin -fomit-frame-pointer -funroll-loops -flto=thin"
+    export CXXFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -flto=full -fomit-frame-pointer -funroll-loops"
     export CPPFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN}"
-    export CFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -flto=thin -fomit-frame-pointer -funroll-loops -flto=thin"
-    export LDFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -fuse-ld=lld -flto=thin -march=znver3 -Wl,--gc-sections -Wl,--icf=all -Wl,--thinlto-jobs=all"
+    export CFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -flto=full -fomit-frame-pointer -funroll-loops"
+    export LDFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -fuse-ld=lld -flto=full -march=znver3 -Wl,--gc-sections -Wl,--icf=all -Wl"
 }
 
 gn_gen() {
