@@ -2,7 +2,7 @@
 set -euo pipefail
 
 clone=false
-with_pgo=false
+with_pgo=true
 
 while [ $# -gt 0 ]; do
     case "$1" in
