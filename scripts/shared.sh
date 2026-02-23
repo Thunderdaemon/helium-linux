@@ -209,7 +209,7 @@ setup_toolchain() {
     resource_dir="$(${CC%% *} --print-resource-dir)"
     export CXXFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -ffast-math -flto=full -fomit-frame-pointer -funroll-loops"
     export CPPFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN}"
-    export CFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -fast-math -flto=full -fomit-frame-pointer -funroll-loops"
+    export CFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -march=znver3 -O3 -ffast-math -flto=full -fomit-frame-pointer -funroll-loops"
     export LDFLAGS+=" -resource-dir=${resource_dir} -B${LLVM_BIN} -fuse-ld=lld -flto=full -march=znver3 -Wl,--gc-sections -Wl,--icf=all -Wl"
 }
 
